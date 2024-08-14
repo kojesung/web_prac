@@ -1,11 +1,12 @@
 import Issue from './Issue';
+import TeamIntro from './TeamIntro';
 
 const Main = () => {
     return (
         <div style={{ backgroundColor: '#e1d6c4', width: '99vw', height: '98vh' }}>
             <div style={{ display: 'flex', height: '100%' }}>
                 {/* height를 지정해줘야 해당 크기만큼 flex를 나눠줌 */}
-                <div style={{ display: 'flex', flex: '1', flexDirection: 'column', height: '100%' }}>
+                <div style={{ display: 'flex', flex: '2', flexDirection: 'column', height: '100%' }}>
                     <div
                         style={{
                             display: 'flex',
@@ -40,12 +41,14 @@ const Main = () => {
                                 borderRadius: '5%',
                                 backgroundColor: '#FDFAF3',
                             }}
-                        ></div>
+                        >
+                            <TeamIntro />
+                        </div>
                     </div>
                 </div>
                 <div
                     style={{
-                        flex: '1',
+                        flex: '3',
                         display: 'flex',
                         justifyContent: 'center',
                         alignItems: 'center',

@@ -1,24 +1,35 @@
+import mocks from './Issue_mock.json';
+import {
+    Container,
+    IssueHeader,
+    IssueHeaderTitle,
+    IssueNav,
+    IssueContentWrapper,
+    IssueItem,
+    IssueDate,
+    IssueText,
+} from './Issue.styles';
+
 const Issue = () => {
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-            <div style={{ display: 'flex', flex: '1', alignItems: 'center', justifyContent: 'space-between' }}>
-                <div style={{ margin: '4%', flex: '1' }}>소식</div>
-                <div style={{ display: 'flex', flex: '1', margin: '2%' }}>
+        <Container>
+            <IssueHeader>
+                <IssueHeaderTitle>소식</IssueHeaderTitle>
+                <IssueNav>
                     <div style={{ margin: '2%' }}>공지사항</div>
                     <div style={{ margin: '2%' }}>업데이트</div>
                     <div style={{ margin: '2%' }}>이벤트</div>
-                </div>
-            </div>
-            <div style={{ flex: '7', border: '1px solid black' }}>
-                <div>
-                    {/* map으로 돌리기 */}
-                    <div style={{ display: 'flex' }}>
-                        <div>날짜</div>
-                        <div>내용</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                </IssueNav>
+            </IssueHeader>
+            <IssueContentWrapper>
+                {mocks.map((item) => (
+                    <IssueItem key={item.id}>
+                        <IssueDate>{item.date}</IssueDate>
+                        <IssueText>{item.content}</IssueText>
+                    </IssueItem>
+                ))}
+            </IssueContentWrapper>
+        </Container>
     );
 };
 
